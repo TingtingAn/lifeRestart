@@ -74,11 +74,11 @@ class Talent {
             rate[grade] *= rateAddition[grade];
 
         const randomGrade = () => {
-            let randomNumber = Math.floor(Math.random() * 1000);
-            if((randomNumber -= rate[3]) < 0) return 3;
-            if((randomNumber -= rate[2]) < 0) return 2;
-            if((randomNumber -= rate[1]) < 0) return 1;
-            return 0;
+            //let randomNumber = Math.floor(Math.random() * 1000);
+            //if((randomNumber -= rate[3]) < 0) return 3;
+            //if((randomNumber -= rate[2]) < 0) return 2;
+            //if((randomNumber -= rate[1]) < 0) return 1;
+            return 3;
         }
 
         // 1000, 100, 10, 1
@@ -93,7 +93,7 @@ class Talent {
             else talentList[grade].push({ grade, name, description, id });
         }
 
-        return new Array(10)
+        return new Array(30)
             .fill(1).map((v, i)=>{
                 if(!i && include) return include;
                 let grade = randomGrade();

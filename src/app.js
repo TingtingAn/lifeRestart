@@ -217,11 +217,11 @@ class App{
                                 li.removeClass('selected')
                                 this.#talentSelected.delete(talent);
                                 if(this.#talentSelected.size<3) {
-                                    talentPage.find('#next').text('请选择3个')
+                                    talentPage.find('#next').text('请选择至少3个')
                                 }
                             } else {
-                                if(this.#talentSelected.size==3) {
-                                    this.hint('只能选3个天赋');
+                                if(this.#talentSelected.size==20) {
+                                    this.hint('只能选20个天赋');
                                     return;
                                 }
 
@@ -252,7 +252,7 @@ class App{
         talentPage
             .find('#next')
             .click(()=>{
-                if(this.#talentSelected.size!=3) {
+                if(this.#talentSelected.size<3) {
                     this.hint('请选择3个天赋');
                     return;
                 }
